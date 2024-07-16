@@ -1,13 +1,19 @@
-<script setup>
-import { ref } from "vue";
+<script>
+export default {
+  data() {
+    return {
+      name: "Vue Jobs",
+      status: "active",
+      tasks: ["Vue", "React", "Angular"],
+      link: "https://www.google.com",
+    };
+  },
 
-const name = ref("Developer Jobs");
-const status = ref("active");
-const tasks = ref(["Vue", "React", "Angular"]);
-const link = ref("https://www.google.com");
-
-const toggleStatus = () => {
-  status.value = status.value === "active" ? "pending" : "active";
+  methods: {
+    toggleStatus() {
+      this.status = this.status === "active" ? "pending" : "active";
+    },
+  },
 };
 </script>
 <template>
@@ -22,5 +28,6 @@ const toggleStatus = () => {
   </ul>
   <a :href="link">Click for google</a>
   <br />
+  <!-- <button v-on:click="toggleStatus">Change Status</button> -->
   <button @click="toggleStatus">Change Status</button>
 </template>
