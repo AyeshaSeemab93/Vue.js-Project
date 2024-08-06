@@ -1,7 +1,8 @@
 <script setup>
 import NavBar from "@/components/Navbar.vue";
+import Hero from "@/components/Hero.vue";
 </script>
 <template>
   <NavBar />
-  <h1>Vue Job</h1>
+  <Hero />
 </template>
