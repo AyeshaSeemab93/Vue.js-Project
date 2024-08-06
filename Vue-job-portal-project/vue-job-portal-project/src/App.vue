@@ -1,26 +1,7 @@
 <script setup>
-import { ref } from "vue";
-
-const name = ref("Developer Jobs");
-const status = ref("active");
-const tasks = ref(["Vue", "React", "Angular"]);
-const link = ref("https://www.google.com");
-
-const toggleStatus = () => {
-  status.value = status.value === "active" ? "pending" : "active";
-};
+import NavBar from "@/components/Navbar.vue";
 </script>
 <template>
-  <h1>Vue Jobs</h1>
-  <h2>{{ name }}</h2>
-  <p v-if="status === 'active'">Vue Jobs are active</p>
-  <p v-else-if="status === 'pending'">Jobs are pending</p>
-  <p v-else>Vue jobs is inactive</p>
-  <h3>Tasks:</h3>
-  <ul>
-    <li v-for="task in tasks" :key="task">{{ task }}</li>
-  </ul>
-  <a :href="link">Click for google</a>
-  <br />
-  <button @click="toggleStatus">Change Status</button>
+  <NavBar />
+  <h1>Vue Job</h1>
 </template>
